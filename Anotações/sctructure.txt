@@ -1,0 +1,4 @@
+ESTRUTURA BASE DO REACTjs
+
+public:  assets e arquivos estáticos
+src:  código da aplicação
