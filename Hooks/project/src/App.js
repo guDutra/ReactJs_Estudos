@@ -6,6 +6,9 @@ import EffectTutorial from './components/EffectTutorial';
 import RefTutorial from './components/RefTutorial';
 import LayoutEffecTutorial from './components/LayoutEffecTutorial';
 import ImperativeHandle from './components/ImperativeHandle';
+import ContextTutorial from './components/ContextTutorial';
+import MemoTutorial from './components/MemoTutorial';
+import CallbackTutorial from './components/CallbackTutorial';
 function App() {
   return (
     <div className="App">
@@ -15,18 +18,28 @@ function App() {
       <hr />
       <h3>useReducer</h3>
       <ReducerTutorial />
-  <hr />*/ }
+  <hr />
       <h3>useEffect</h3>
       <EffectTutorial />
       <hr />
       <h3>useRef</h3>
       <RefTutorial />
       <hr />
+      */ }
       <h3>useLayoutEffect</h3>
       <LayoutEffecTutorial />
       <hr />
       <h3>useLayoutEffect</h3>
       <ImperativeHandle />
+      <hr />
+      <h3>useContext</h3>
+      <ContextTutorial />
+      <hr />
+      <h3>useMemo</h3>
+      <MemoTutorial />
+      <hr />
+      <h3>useCallback</h3>
+      <CallbackTutorial />
     </div>
   );
 }
