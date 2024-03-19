@@ -2,42 +2,43 @@ import React from 'react'
 import * as FaIcons from "react-icons/fa"
 import * as AiIcons from "react-icons/ai"
 import * as IoIcons from "react-icons/io"
-
+import * as MdIcons from "react-icons/md"
 export const SidebarData = [
     {
-        title: 'Home',
+        title: 'Dashboard',
         path: '/',
-        icon: <AiIcons.AiFillHome/>,
+        icon: <FaIcons.FaChartBar  />,
         cName: 'nav-text'
     },
     {
-        title: 'Reports',
-        path: '/reports',
-        icon: <IoIcons.IoIosPaper/>,
+        title: 'Incomes',
+        path: '/incomes',
+        icon: <FaIcons.FaDollarSign />,
         cName: 'nav-text'
     },
     {
-        title: 'Products',
-        path: '/products',
-        icon: <FaIcons.FaCartPlus/>,
+        title: 'Expenses',
+        path: '/expenses',
+        icon: <FaIcons.FaMoneyCheckAlt />,
+        cName: 'nav-text'
+    },
+
+    {
+        title: 'Alerts',
+        path: '/alerts',
+        icon: <IoIcons.IoIosWarning  />,
         cName: 'nav-text'
     },
     {
-        title: 'Team',
-        path: '/team',
-        icon: <IoIcons.IoMdPeople/>,
+        title: 'Goals',
+        path: '/goals',
+        icon: <FaIcons.FaBullseye   />,
         cName: 'nav-text'
     },
     {
-        title: 'Messages',
-        path: '/messages',
-        icon: <FaIcons.FaEnvelopeOpenText/>,
-        cName: 'nav-text'
-    },
-    {
-        title: 'Support',
-        path: '/support',
-        icon: <IoIcons.IoMdAddCircle/>,
+        title: 'Create',
+        path: '/register',
+        icon: <IoIcons.IoMdAddCircle />,
         cName: 'nav-text'
     },
 ]
