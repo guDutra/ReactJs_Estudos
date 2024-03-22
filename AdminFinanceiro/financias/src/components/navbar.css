@@ -1,5 +1,11 @@
+:root {
+    --primary-color: #0d1321; 
+    --second-color:#1d2d44;
+    --third-color: #3e5c76;
+    --forth-color: #748cab;
+  }
 .navbar {
-    background-color: #060B26;
+    background-color: var(--primary-color);
     height: 80px;
     display: flex;
     justify-content: start;
@@ -13,8 +19,8 @@
 }
 
 .nav-menu {
-    background-color: #060B26;
-    width: 80px;
+    background-color: var(--primary-color);
+    width: 10vh;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -23,8 +29,8 @@
     transition: 850ms;
 }
 .nav-menu:hover {
-    background-color: #060B26;
-    width: 250px;
+    background-color:  var(--second-color);
+    width: 30vh;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -77,21 +83,14 @@
 }
 
 .nav-text a:hover {
-    background-color: #1a83ff;
+    background-color: var(--primary-color);
 }
 
 .nav-menu-items {
     width: 100%;
 }
 
-.navbar-toggle {
-    background-color: #060B26;
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-}
+
 
 span {
     margin-left: 16px;
