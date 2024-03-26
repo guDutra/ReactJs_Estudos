@@ -11,10 +11,10 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path='/' exact Component={DashboardPage} />
-          <Route path='/expenses' Component={ExpensesPage} />
-          <Route path='/incomes' Component={IncomesPage} />
-          <Route path='/register' Component={RegisterPage} />
+          <Route path='/' exact element={<DashboardPage/>} />
+          <Route path='/expenses' element={<ExpensesPage/>} />
+          <Route path='/incomes' element={<IncomesPage/>} />
+          <Route path='/register' element={<RegisterPage/>} />
         </Routes>
       </Router>
     </>
