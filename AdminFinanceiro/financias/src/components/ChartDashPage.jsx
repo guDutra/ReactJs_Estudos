@@ -7,7 +7,7 @@ const ChartDashPage = () => {
             <div className='ChartDashPage'>
                
                     <ChartComponent />
-                
+                    
                 
 
             </div>
