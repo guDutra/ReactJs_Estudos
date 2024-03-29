@@ -26,7 +26,7 @@ const Lancamentos = () => {
     };
     return (
         <div>
-            <h2>Lançamentos</h2>
+            <h2 id='lancamento-title'>Lançamentos</h2>
             {products && products.length > 0 ? (
                 <Slider {...settings}>
                     {products.map((product) => (
