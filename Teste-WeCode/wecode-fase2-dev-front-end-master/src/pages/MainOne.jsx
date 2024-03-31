@@ -126,16 +126,16 @@ const MainOne = () => {
 
                 <nav className={`${navbarBackground ? 'navbar-white' : ''}`}>
                     <div className='icons-left'>
-                        <i onClick={() => ToggleShowSidebar()}><FaIcons.FaBars /></i>
-                        <i><FaIcons.FaSearch /> </i>
+                        <i onClick={() => ToggleShowSidebar()}><FaIcons.FaBars color={`${navbarBackground ? 'black' : 'white'}`} /></i>
+                        <i><FaIcons.FaSearch color={`${navbarBackground ? 'black' : 'white'}`} /> </i>
                     </div>
                     <div className='logo-name'>
                         <img src={`${navbarBackground ? '/static/images/principais/logo-preta.png' : '/static/images/principais/Logo.png'}`} alt="logo" />
                     </div>
                     <div className='icons-right'>
-                        <i><MdIcons.MdPerson /></i>
+                        <i><MdIcons.MdPerson color={`${navbarBackground ? 'black' : 'white'}`} /></i>
                         <i className='shopping-cart-icon'>
-                            <AiIcons.AiOutlineShopping /> <span id='counting-shopcart'>{countingProducts}</span>
+                            <AiIcons.AiOutlineShopping color={`${navbarBackground ? 'black' : 'white'}`} /> <span id='counting-shopcart'>{countingProducts}</span>
                         </i>
                     </div>
                 </nav>
