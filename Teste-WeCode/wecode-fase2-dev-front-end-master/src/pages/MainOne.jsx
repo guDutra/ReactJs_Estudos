@@ -11,9 +11,15 @@ import '../components/lancamentos.scss'
 import '../components/bottomPage.scss'
 import '../components/conhecaMais.scss'
 import { getProducts } from '../utils';
+import SidebarComponent from '../components/Sidebar';
 const MainOne = () => {
     const [navbarBackground, setNavbarBackground] = useState(false);
     const [products, setProducts] = useState(null);
+    const [countingProducts, setCountingProducts] = useState(0);
+    const [shoppingCart, setShoppingCart] = useState([]);
+    const [showAlertAdd, setShowAlertAdd] = useState(false);
+    const [showAlertAlreadyAdd, setShowAlertAlreadyAdd] = useState(false);
+    const [showSidebar, setShowSidebar] = useState(false);
     useEffect(() => {
         getProducts().then(res => {
             setProducts(res);
@@ -79,25 +85,72 @@ const MainOne = () => {
         slidesToScroll: 1,
 
     };
+
+    const addToCart = (product) => {
+
+        if (shoppingCart.some(item => item.id === product.id)) {
+            setShowAlertAlreadyAdd(true);
+            setTimeout(() => {
+                setShowAlertAlreadyAdd(false);
+            }, 3000);
+        } else {
+            setShowAlertAdd(true);
+            setTimeout(() => {
+                setShowAlertAdd(false);
+            }, 3000);
+            setShoppingCart(prevArray => prevArray.concat(product));
+            setCountingProducts(countingProducts + 1);
+        }
+    }
+
+    const ToggleFavorite = (e) => {
+        if (e.target.attributes[0].value == '/static/images/white-heart.png') {
+            e.target.attributes[0].value = '/static/images/black-heart.png'
+        } else {
+            e.target.attributes[0].value = '/static/images/white-heart.png'
+        }
+    }
+
+    const ToggleShowSidebar = () => {
+        setShowSidebar(!showSidebar);
+    }
+
     return (
 
         <>
+            {showSidebar && (
+
+                <SidebarComponent showSidebar={ToggleShowSidebar} />
+            )}
             <header className='navbar'>
+
                 <nav className={`${navbarBackground ? 'navbar-white' : ''}`}>
                     <div className='icons-left'>
-                        <i><FaIcons.FaBars /></i>
+                        <i onClick={() => ToggleShowSidebar()}><FaIcons.FaBars /></i>
                         <i><FaIcons.FaSearch /> </i>
                     </div>
                     <div className='logo-name'>
-                        <img src="/static/images/principais/logo-preta.png" alt="logo" />
+                        <img src={`${navbarBackground ? '/static/images/principais/logo-preta.png' : '/static/images/principais/Logo.png'}`} alt="logo" />
                     </div>
                     <div className='icons-right'>
                         <i><MdIcons.MdPerson /></i>
-                        <i><AiIcons.AiOutlineShopping /> </i>
+                        <i className='shopping-cart-icon'>
+                            <AiIcons.AiOutlineShopping /> <span id='counting-shopcart'>{countingProducts}</span>
+                        </i>
                     </div>
                 </nav>
             </header>
-            <body>
+            <div>
+                {showAlertAdd && (
+                    <div className='alert-add-cart'>
+                        <p>Adicionado ao Carrinho</p>
+                    </div>
+                )}
+                {showAlertAlreadyAdd && (
+                    <div className='alert-add-cart'>
+                        <p>Produto já está adicionado ao carrinho</p>
+                    </div>
+                )}
                 <div className='topPage'>
                     <Slider {...settingsTopPageSlider}>
                         <div className='image-slider'>
@@ -139,7 +192,10 @@ const MainOne = () => {
                         {products.map((product) => (
                             <div className='lancamento-page' key={product.id}>
                                 <div className='img-lancamento'>
-                                    <div className='heart-lancamento'><img src="/static/images/white-heart.png" alt="" /> </div>
+                                    <div className='heart-lancamento'>
+                                        <img onClick={(e) => ToggleFavorite(e)}
+                                            src="/static/images/white-heart.png" alt="" />
+                                    </div>
                                     <img id='image-product' src={product.image} alt="" />
                                     <div id='img-bottom-info'>
                                         <p> {product.price.isDiscount !== null ?
@@ -147,7 +203,9 @@ const MainOne = () => {
                                                 % OFF </span>
                                             : ''}
                                         </p>
-                                        <span><img src="/static/images/adicionar-carrinho.png" alt="" /></span>
+                                        <span onClick={() => addToCart(product)}>
+                                            <img src="/static/images/adicionar-carrinho.png" alt="" />
+                                        </span>
                                     </div>
 
                                 </div>
@@ -166,7 +224,7 @@ const MainOne = () => {
 
                     </Slider>
                 ) : (
-                    <p>loading</p>
+                    <p>Erro ao carregar produtos</p>
                 )}
 
                 <div className='conhecaMaisPage'>
@@ -203,7 +261,7 @@ const MainOne = () => {
 
                     </Slider>
                 </div>
-            </body>
+            </div>
             <footer className='bottomPage'>
 
                 <img src="/static/images/principais/logo-grande.png" alt="" />
