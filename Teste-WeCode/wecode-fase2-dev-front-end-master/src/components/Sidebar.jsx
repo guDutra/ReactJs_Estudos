@@ -2,13 +2,20 @@ import React, { useState } from 'react'
 import './sidebar.scss'
 const Sidebar = ({ showSidebar }) => {
     const [showSubCategory, setShowSubCategory] = useState(false);
+    const categories = [
+        { name: 'Sapatos', subCategories: ['Scarpins', 'Mocassim', 'Sapatilhas', 'Mules', 'Peep Toe', 'Oxford'] },
+        { name: 'Sandálias', subCategories: ['Coleção Verão', 'Alta'] },
+        { name: 'Botas', subCategories: ['Couro', 'Cano Curto', 'Cano Longo'] },
+        { name: 'Tênis', subCategories: ['Corrida', 'Sneaker'] },
+        { name: 'Outlet', subCategories: ['Exemplo', 'Exemplo 2', 'Exemplo 3'] },
+
+    ];
     const handleClick = () => {
-        
-        showSidebar(); 
+
+        showSidebar();
     };
-    const ToggleSubCategory = (e) => {
-        e.target.classList.add('active')
-        console.log(e.target);
+    const ToggleSubCategory = (index) => {
+        setShowSubCategory(showSubCategory === index ? null : index);
     }
     return (
 
@@ -24,70 +31,23 @@ const Sidebar = ({ showSidebar }) => {
                 <a href="">Conheça</a>
             </div>
             <div className='options-sidebar'>
-                <ul>
-                    <li className="category" onClick={(e) => ToggleSubCategory(e)}>
-                        <div className='title-category'>
-                            <p>Sapatos</p>
-                            <span><img src="/static/images/angulo-direito 1.png" alt="" /></span>
-                        </div>
-
-                        <ul className={`${showSubCategory ? 'sub-category' : 'none'}`}>
-                            <li>Scarpins</li>
-                            <li>Mocassim</li>
-                            <li>Sapatilhas</li>
-                            <li>Mules</li>
-                            <li>Peep Toe</li>
-                            <li>Oxford</li>
-                        </ul>
-                    </li>
-                    <li className="category" onClick={() => (e) => ToggleSubCategory(e)}>
-                        <div className='title-category'>
-                            <p>Sandalias</p>
-                            <span><img src="/static/images/angulo-direito 1.png" alt="" /></span>
-                        </div>
-
-                        <ul className={`${showSubCategory ? 'sub-category' : 'none'}`}>
-                            <li>T-Shirts</li>
-                            <li>Polos</li>
-                            <li>Dress Shirts</li>
-                        </ul>
-                    </li>
-                    <li className="category" onClick={() => (e) => ToggleSubCategory(e)}>
-                        <div className='title-category'>
-                            <p>Botas</p>
-                            <span><img src="/static/images/angulo-direito 1.png" alt="" /></span>
-                        </div>
-
-                        <ul className={`${showSubCategory ? 'sub-category' : 'none'}`}>
-                            <li>T-Shirts</li>
-                            <li>Polos</li>
-                            <li>Dress Shirts</li>
-                        </ul>
-                    </li>
-                    <li className="category" onClick={() => (e) => ToggleSubCategory(e)}>
-                        <div className='title-category'>
-                            <p>Tênis</p>
-                            <span><img src="/static/images/angulo-direito 1.png" alt="" /></span>
-                        </div>
-
-                        <ul className={`${showSubCategory ? 'sub-category' : 'none'}`}>
-                            <li>T-Shirts</li>
-                            <li>Polos</li>
-                            <li>Dress Shirts</li>
-                        </ul>
-                    </li>
-                    <li className="category" onClick={() => (e) => ToggleSubCategory(e)}>
-                        <div className='title-category'>
-                            <p>Outlet</p>
-                            <span><img src="/static/images/angulo-direito 1.png" alt="" /></span>
-                        </div>
-
-                        <ul className={`${showSubCategory ? 'sub-category' : 'none'}`}>
-                            <li>T-Shirts</li>
-                            <li>Polos</li>
-                            <li>Dress Shirts</li>
-                        </ul>
-                    </li>
+                <ul >
+                    {categories.map((category, index) => (
+                        <li key={index} className='category'>
+                            <div className={`${showSubCategory === index ? 'title-category active' : 'title-category'}`} onClick={() => ToggleSubCategory(index)}>
+                                <p>{category.name}</p>
+                                <span><img src="/static/images/angulo-direito 1.png" alt="" /></span>
+                            </div>
+                            { }
+                            {showSubCategory === index && (
+                                <ul className="sub-category">
+                                    {category.subCategories.map((subCategory, subIndex) => (
+                                        <li key={subIndex}>{subCategory}</li>
+                                    ))}
+                                </ul>
+                            )}
+                        </li>
+                    ))}
                 </ul>
             </div>
         </div>
