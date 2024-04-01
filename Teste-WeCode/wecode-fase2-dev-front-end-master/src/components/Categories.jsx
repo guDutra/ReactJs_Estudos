@@ -4,7 +4,7 @@ const Categories = () => {
 
     return (
         <>
-            <h2>Categorias</h2>
+            <h2>FERFEFREFER</h2>
             <div className='categoriesPage'>
                 <div className='productDiv'>
                     <img src="/static/images/categorias/banner-botas.png" alt="" />

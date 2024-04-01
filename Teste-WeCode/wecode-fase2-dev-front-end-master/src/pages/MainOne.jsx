@@ -152,6 +152,7 @@ const MainOne = () => {
                     </div>
                 )}
                 <div className='topPage'>
+
                     <Slider {...settingsTopPageSlider}>
                         <div className='image-slider'>
                             <img src="/static/images/principais/banner-principal-1.png" alt="" />
@@ -163,25 +164,31 @@ const MainOne = () => {
                             <img src="/static/images/principais/banner-principal-3.png" alt="" />
                         </div>
                     </Slider>
+
                 </div>
-                <h2>Categorias</h2>
+
+
                 <div className='categoriesPage'>
-                    <div className='productDiv'>
-                        <img src="/static/images/categorias/banner-botas.png" alt="" />
-                        <p>Botas</p>
+                    <h2 >Categorias</h2>
+                    <div className='categoriesPage-slider'>
+                        <div className='productDiv'>
+                            <img src="/static/images/categorias/banner-botas.png" alt="" />
+                            <p>Botas</p>
+                        </div>
+                        <div className='productDiv'>
+                            <img src="/static/images/categorias/banner-sandalias.png" alt="" />
+                            <p>Sandalias</p>
+                        </div>
+                        <div className='productDiv'>
+                            <img src="/static/images/categorias/banner-sapatilhas.png" alt="" />
+                            <p>Sapatilhas</p>
+                        </div>
+                        <div className='productDiv'>
+                            <img src="/static/images/categorias/banner-scarpins.png" alt="" />
+                            <p>Scarpins</p>
+                        </div>
                     </div>
-                    <div className='productDiv'>
-                        <img src="/static/images/categorias/banner-sandalias.png" alt="" />
-                        <p>Sandalias</p>
-                    </div>
-                    <div className='productDiv'>
-                        <img src="/static/images/categorias/banner-sapatilhas.png" alt="" />
-                        <p>Sapatilhas</p>
-                    </div>
-                    <div className='productDiv'>
-                        <img src="/static/images/categorias/banner-scarpins.png" alt="" />
-                        <p>Scarpins</p>
-                    </div>
+
                 </div >
                 <img id='bannerPequeno' src="/static/images/principais/banner-pequeno.png" alt="" />
                 <img id='bannerGrande' src="/static/images/principais/banner-grande.png" alt="" />
@@ -283,12 +290,12 @@ const MainOne = () => {
                     </div>
                 </div>
                 <div className='links'>
-                    <div className='sobre-empresa'>
+                    <div className='link-content'>
                         <p>Sobre a Empresa</p>
                         <a href="">Quem somos</a>
                         <a href="">Fale conosco</a>
                     </div>
-                    <div className='politicas'>
+                    <div className='link-content'>
                         <p>Politicas</p>
                         <a href="">Política de Privacidade</a>
                         <a href="">Termos de Uso</a>
