@@ -2,7 +2,8 @@ import React from 'react'
 import './bottomPage.scss'
 const BottomPage = () => {
     return (
-        <div className='bottomPage'>
+        <footer className='bottomPage'>
+
             <img src="/static/images/principais/logo-grande.png" alt="" />
             <div className='apps-logo-container'>
                 <div className='app-logo-item'>
@@ -22,12 +23,12 @@ const BottomPage = () => {
                 </div>
             </div>
             <div className='links'>
-                <div className='sobre-empresa'>
+                <div className='link-content'>
                     <p>Sobre a Empresa</p>
                     <a href="">Quem somos</a>
                     <a href="">Fale conosco</a>
                 </div>
-                <div className='politicas'>
+                <div className='link-content'>
                     <p>Politicas</p>
                     <a href="">Política de Privacidade</a>
                     <a href="">Termos de Uso</a>
@@ -36,7 +37,8 @@ const BottomPage = () => {
                 </div>
             </div>
 
-        </div>
+
+        </footer>
     )
 }
 

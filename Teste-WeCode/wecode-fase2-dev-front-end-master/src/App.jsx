@@ -5,7 +5,8 @@ import MainOne from './pages/MainOne';
 function App() {
   return (
     <div className="App">
-        <MainOne/>
+      <Main/>
+      {/*<MainOne/>*/}
     </div>
   );
 }

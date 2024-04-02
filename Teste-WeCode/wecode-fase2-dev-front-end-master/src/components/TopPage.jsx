@@ -22,32 +22,30 @@ const TopPage = () => {
                 <button className='btnStart'>
                     Conheça Agora
                 </button>
-                <ul className='dots' style={{ marginLeft: '0px', marginRight: '0px'}}> {dots} </ul>
+                <ul className='dots' style={{ marginLeft: '0px', marginRight: '0px' }}> {dots} </ul>
 
             </div>
         )
-        
-       
+
+
     };
     return (
-        <>
+
             <div className='topPage'>
+
                 <Slider {...settings}>
                     <div className='image-slider'>
                         <img src="/static/images/principais/banner-principal-1.png" alt="" />
                     </div>
                     <div>
-                    <img src="/static/images/principais/banner-principal-2.png" alt="" />
+                        <img src="/static/images/principais/banner-principal-2.png" alt="" />
                     </div>
                     <div>
-                    <img src="/static/images/principais/banner-principal-3.png" alt="" />
+                        <img src="/static/images/principais/banner-principal-3.png" alt="" />
                     </div>
                 </Slider>
+
             </div>
-
-
-        </>
-
     );
     ;
 }

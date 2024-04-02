@@ -3,9 +3,9 @@ import './categories.scss'
 const Categories = () => {
 
     return (
-        <>
-            <h2>FERFEFREFER</h2>
-            <div className='categoriesPage'>
+        <div className='categoriesPage'>
+            <h2 >Categorias</h2>
+            <div className='categoriesPage-slider'>
                 <div className='productDiv'>
                     <img src="/static/images/categorias/banner-botas.png" alt="" />
                     <p>Botas</p>
@@ -22,8 +22,9 @@ const Categories = () => {
                     <img src="/static/images/categorias/banner-scarpins.png" alt="" />
                     <p>Scarpins</p>
                 </div>
-            </div >
-        </>
+            </div>
+
+        </div >
 
     )
 }

@@ -4,9 +4,10 @@ import * as AiIcons from "react-icons/ai"
 import * as IoIcons from "react-icons/io"
 import * as MdIcons from "react-icons/md"
 import '../components/navbar.scss'
-const Navbar = () => {
-
+const Navbar = ({countingProducts, toggleSidebar}) => {
+    const [showSidebar, setShowSidebar] = useState(false);
     const [navbarBackground, setNavbarBackground] = useState(false);
+    
 
     useEffect(() => {
         const handleScroll = () => {
@@ -21,22 +22,26 @@ const Navbar = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+    
     return (
-        <div className='navbar'>
-            <nav className={`${navbarBackground ? 'navbar-white' : ''}`}>
-                <div className='icons-left'>
-                    <i><FaIcons.FaBars /></i>
-                    <i><FaIcons.FaSearch /> </i>
-                </div>
-                <div className='logo-name'>
-                    <img src="/static/images/principais/logo-preta.png" alt="logo" />
-                </div>
-                <div className='icons-right'>
-                    <i><MdIcons.MdPerson /></i>
-                    <i><AiIcons.AiOutlineShopping /> </i>
-                </div>
-            </nav>
-        </div>
+        <header className='navbar'>
+
+                <nav className={`${navbarBackground ? 'navbar-white' : ''}`}>
+                    <div className='icons-left'>
+                        <i onClick={() => toggleSidebar()}><FaIcons.FaBars color={`${navbarBackground ? 'black' : 'white'}`} /></i>
+                        <i><FaIcons.FaSearch color={`${navbarBackground ? 'black' : 'white'}`} /> </i>
+                    </div>
+                    <div className='logo-name'>
+                        <img src={`${navbarBackground ? '/static/images/principais/logo-preta.png' : '/static/images/principais/Logo.png'}`} alt="logo" />
+                    </div>
+                    <div className='icons-right'>
+                        <i><MdIcons.MdPerson color={`${navbarBackground ? 'black' : 'white'}`} /></i>
+                        <i className='shopping-cart-icon'>
+                            <AiIcons.AiOutlineShopping color={`${navbarBackground ? 'black' : 'white'}`} /> <span id='counting-shopcart'>{countingProducts}</span>
+                        </i>
+                    </div>
+                </nav>
+            </header>
     )
 }
 

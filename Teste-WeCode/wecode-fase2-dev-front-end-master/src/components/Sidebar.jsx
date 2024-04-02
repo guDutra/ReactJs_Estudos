@@ -10,6 +10,7 @@ const Sidebar = ({ showSidebar }) => {
         { name: 'Outlet', subCategories: ['Exemplo', 'Exemplo 2', 'Exemplo 3'] },
 
     ];
+    
     const handleClick = () => {
 
         showSidebar();
