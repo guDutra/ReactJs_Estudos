@@ -9,6 +9,7 @@ import ImperativeHandle from './components/ImperativeHandle';
 import ContextTutorial from './components/ContextTutorial';
 import MemoTutorial from './components/MemoTutorial';
 import CallbackTutorial from './components/CallbackTutorial';
+import Main from './showListContext/Main';
 function App() {
   return (
     <div className="App">
@@ -25,7 +26,7 @@ function App() {
       <h3>useRef</h3>
       <RefTutorial />
       <hr />
-      */ }
+      
       <h3>useLayoutEffect</h3>
       <LayoutEffecTutorial />
       <hr />
@@ -40,6 +41,8 @@ function App() {
       <hr />
       <h3>useCallback</h3>
       <CallbackTutorial />
+      */ }
+      <Main/>
     </div>
   );
 }
